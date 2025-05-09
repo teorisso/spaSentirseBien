@@ -9,6 +9,7 @@ import { SessionProvider } from 'next-auth/react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function AppContent({ Component, pageProps }: AppProps) {
     const router = useRouter();
@@ -20,6 +21,7 @@ function AppContent({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             {!isAdminRoute && <Footer />}
             <Toaster position="top-right" />
+            <SpeedInsights />
         </>
     );
 }
